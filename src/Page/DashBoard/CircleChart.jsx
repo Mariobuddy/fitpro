@@ -11,15 +11,15 @@ const CircleChart = () => {
       {
         data: [180, 370, 300],
         backgroundColor: ['#fe019a','#B026FF ', '#e4ddddba'],
-        borderWidth:[0,0,0],
-        radius: 90,
+        borderWidth:[0,12,18],
+        radius: 100,
         hoverOffset: 20, 
       },
     ],
   };
 
   let options={
-    cutout:85
+    cutout:60
   }
   return (
     <Wrapper>
