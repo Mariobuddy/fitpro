@@ -10,7 +10,7 @@ const BarChart = () => {
     { height: "17rem", color: "#e4ddddba", des: "May" },
     { height: "8rem", color: "#e4ddddba", des: "June" },
     { height: "19rem", color: "#e4ddddba", des: "July" },
-    { height: "22rem", color: "#2b0080", des: "Aug" },
+    { height: "22rem", color: "#B026FF", des: "Aug" },
     { height: "20rem", color: "#e4ddddba", des: "Sep" },
     { height: "16rem", color: "#e4ddddba", des: "Oct" },
     { height: "14rem", color: "#e4ddddba", des: "Nov" },

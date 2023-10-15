@@ -13,10 +13,10 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import rohit from "../../Assets/main.jpg";
 
 const Home = () => {
-  const [currentSelect, setCurrentSelect] = useState("block");
+  const [currentSelect, setCurrentSelect] = useState("");
 
   const handnav = (e) => {
-    console.log(e.target.id);
+    setCurrentSelect(e.target.id);
   };
   return (
     <Wrapper>
@@ -26,43 +26,99 @@ const Home = () => {
             <TbSettings2 className="setting" />
             Dashboard
           </p>
-          <NavLink className={"navOne"} to={"dashboard"}>
+          <NavLink
+            className={"navOne"}
+            to={"dashboard"}
+            onClick={handnav}
+            id={"home"}
+          >
             <div className="in" onClick={handnav} id={"home"}>
               <TbSquareKey className="icon" />
               Dashboard
             </div>
-            <MdKeyboardArrowRight className="arrow" />
+            <MdKeyboardArrowRight
+              className="arrow"
+              style={{ display: currentSelect === "home" ? "none" : "block" }}
+            />
           </NavLink>
-          <NavLink className={"navOne"} to={"product"}>
+          <NavLink
+            className={"navOne"}
+            to={"product"}
+            onClick={handnav}
+            id={"product"}
+          >
             <div className="in" onClick={handnav} id={"product"}>
               <FiBox className="icon" />
               Product
             </div>{" "}
-            <MdKeyboardArrowRight className="arrow" />
+            <MdKeyboardArrowRight
+              className="arrow"
+              style={{
+                display: currentSelect === "product" ? "none" : "block",
+              }}
+            />
           </NavLink>
-          <NavLink className={"navOne"} to={"customer"}>
+          <NavLink
+            className={"navOne"}
+            to={"customer"}
+            onClick={handnav}
+            id={"customer"}
+          >
             <div className="in" onClick={handnav} id={"customer"}>
               <TbUserSquareRounded className="icon" /> Customers{" "}
             </div>
-            <MdKeyboardArrowRight className="arrow" />
+            <MdKeyboardArrowRight
+              className="arrow"
+              style={{
+                display: currentSelect === "customer" ? "none" : "block",
+              }}
+            />
           </NavLink>
-          <NavLink className={"navOne"} to={"income"}>
+          <NavLink
+            className={"navOne"}
+            to={"income"}
+            onClick={handnav}
+            id={"income"}
+          >
             <div className="in" onClick={handnav} id={"income"}>
               <FaWallet className="icon" /> Income{" "}
             </div>
-            <MdKeyboardArrowRight className="arrow" />
+            <MdKeyboardArrowRight
+              className="arrow"
+              style={{
+                display: currentSelect === "income" ? "none" : "block",
+              }}
+            />
           </NavLink>
-          <NavLink className={"navOne"} to={"promote"}>
+          <NavLink
+            className={"navOne"}
+            to={"promote"}
+            onClick={handnav}
+            id={"promote"}
+          >
             <div className="in" onClick={handnav} id={"promote"}>
               <CiDiscount1 className="icon" /> Promote{" "}
             </div>
-            <MdKeyboardArrowRight className="arrow" />
+            <MdKeyboardArrowRight
+              className="arrow"
+              style={{
+                display: currentSelect === "promote" ? "none" : "block",
+              }}
+            />
           </NavLink>
-          <NavLink className={"navOne"} to={"help"}>
+          <NavLink
+            className={"navOne"}
+            to={"help"}
+            onClick={handnav}
+            id={"help"}
+          >
             <div className="in" onClick={handnav} id={"help"}>
               <TbHelpOctagon className="icon" /> Help{" "}
             </div>
-            <MdKeyboardArrowRight className="arrow" />
+            <MdKeyboardArrowRight
+              className="arrow"
+              style={{ display: currentSelect === "help" ? "none" : "block" }}
+            />
           </NavLink>
         </div>
         <div className="profile">
