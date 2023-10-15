@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useLocation } from "react-router-dom";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { TbSettings2 } from "react-icons/tb";
 import { CiDiscount1 } from "react-icons/ci";
@@ -13,10 +13,11 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import rohit from "../../Assets/main.jpg";
 
 const Home = () => {
-  const [currentSelect, setCurrentSelect] = useState("");
+  const location = useLocation();
+  const [currentSelect, setCurrentSelect] = useState(location.pathname);
 
-  const handnav = (e) => {
-    setCurrentSelect(e.target.id);
+  const handnav = (val) => {
+    setCurrentSelect(val);
   };
   return (
     <Wrapper>
@@ -29,95 +30,91 @@ const Home = () => {
           <NavLink
             className={"navOne"}
             to={"dashboard"}
-            onClick={handnav}
-            id={"home"}
+            onClick={() => handnav("/dashboard")}
           >
-            <div className="in" onClick={handnav} id={"home"}>
+            <div className="in">
               <TbSquareKey className="icon" />
               Dashboard
             </div>
             <MdKeyboardArrowRight
               className="arrow"
-              style={{ display: currentSelect === "home" ? "none" : "block" }}
+              style={{
+                display: currentSelect === "/dashboard" ? "none" : "block",
+              }}
             />
           </NavLink>
           <NavLink
             className={"navOne"}
             to={"product"}
-            onClick={handnav}
-            id={"product"}
+            onClick={() => handnav("/product")}
           >
-            <div className="in" onClick={handnav} id={"product"}>
+            <div className="in">
               <FiBox className="icon" />
               Product
             </div>{" "}
             <MdKeyboardArrowRight
               className="arrow"
               style={{
-                display: currentSelect === "product" ? "none" : "block",
+                display: currentSelect === "/product" ? "none" : "block",
               }}
             />
           </NavLink>
           <NavLink
             className={"navOne"}
             to={"customer"}
-            onClick={handnav}
-            id={"customer"}
+            onClick={() => handnav("/customer")}
           >
-            <div className="in" onClick={handnav} id={"customer"}>
+            <div className="in">
               <TbUserSquareRounded className="icon" /> Customers{" "}
             </div>
             <MdKeyboardArrowRight
               className="arrow"
               style={{
-                display: currentSelect === "customer" ? "none" : "block",
+                display: currentSelect === "/customer" ? "none" : "block",
               }}
             />
           </NavLink>
           <NavLink
             className={"navOne"}
             to={"income"}
-            onClick={handnav}
-            id={"income"}
+            onClick={() => handnav("/income")}
           >
-            <div className="in" onClick={handnav} id={"income"}>
+            <div className="in">
               <FaWallet className="icon" /> Income{" "}
             </div>
             <MdKeyboardArrowRight
               className="arrow"
               style={{
-                display: currentSelect === "income" ? "none" : "block",
+                display: currentSelect === "/income" ? "none" : "block",
               }}
             />
           </NavLink>
           <NavLink
             className={"navOne"}
             to={"promote"}
-            onClick={handnav}
-            id={"promote"}
+            onClick={() => handnav("/promote")}
           >
-            <div className="in" onClick={handnav} id={"promote"}>
+            <div className="in">
               <CiDiscount1 className="icon" /> Promote{" "}
             </div>
             <MdKeyboardArrowRight
               className="arrow"
               style={{
-                display: currentSelect === "promote" ? "none" : "block",
+                display: currentSelect === "/promote" ? "none" : "block",
               }}
             />
           </NavLink>
           <NavLink
             className={"navOne"}
             to={"help"}
-            onClick={handnav}
-            id={"help"}
+            onClick={() => handnav("/help")}
           >
-            <div className="in" onClick={handnav} id={"help"}>
+            <div className="in">
               <TbHelpOctagon className="icon" /> Help{" "}
             </div>
             <MdKeyboardArrowRight
               className="arrow"
-              style={{ display: currentSelect === "help" ? "none" : "block" }}
+              style={{ display: currentSelect === "/help" ? "none" : "block" }}
             />
           </NavLink>
         </div>
