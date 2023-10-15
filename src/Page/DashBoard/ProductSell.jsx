@@ -38,7 +38,7 @@ const ProductSell = () => {
         </div>
       </div>
       <div className="pro-name">
-        <p>Product Sell</p>
+        <p>Product Name</p>
         <div className="inner-name">
           <p>Stock</p>
           <p>Price</p>
@@ -123,7 +123,7 @@ const Wrapper = styled.div`
               font-size: 1.4rem;
             }
             &:nth-child(2) {
-              font-size: 1rem;
+              font-size: 1.1rem;
               color: #b7b2b2;
             }
           }
@@ -138,6 +138,10 @@ const Wrapper = styled.div`
 
         p {
           font-size: 1.2rem;
+          width: 8rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
           &:nth-child(1) {
           }
           &:nth-child(2) {
@@ -172,6 +176,7 @@ const Wrapper = styled.div`
         padding: 0rem 1rem;
         cursor: pointer;
         outline: none;
+        color: #989595;
       }
     }
     .search-div {
@@ -222,8 +227,15 @@ const Wrapper = styled.div`
       justify-content: space-between;
 
       p {
-        &:nth-child(){
-            
+        width: 8rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:nth-child(1) {
+        }
+        &:nth-child(2) {
+        }
+        &:nth-child(3) {
         }
       }
     }

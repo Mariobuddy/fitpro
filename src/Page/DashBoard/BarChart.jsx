@@ -81,6 +81,7 @@ const Wrapper = styled.div`
       padding: 0rem 1rem;
       cursor: pointer;
       outline: none;
+      color: #989595;
     }
   }
 

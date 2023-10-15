@@ -17,10 +17,10 @@ const DashBoard = () => {
       color: "#00E400",
       bg: "#00e4003d",
       textcol: "#00E400",
-      icon: <AiOutlineDollar style={{color:"#00E400",fontSize:"6rem"}}/>,
+      icon: <AiOutlineDollar style={{ color: "#00E400", fontSize: "6rem" }} />,
       day: "this month",
-      val:"37.8%",
-      bar: <HiArrowUp style={{color:"#00E400"}}/>,
+      val: "37.8%",
+      bar: <HiArrowUp style={{ color: "#00E400" }} />,
       money: "$198k",
       description: "Earning",
     },
@@ -28,10 +28,14 @@ const DashBoard = () => {
       color: "#D90166",
       bg: "#d901663d",
       textcol: "#FF0000",
-      icon: <HiOutlineClipboardDocumentList style={{color:"#D90166",fontSize:"6rem"}}/>,
+      icon: (
+        <HiOutlineClipboardDocumentList
+          style={{ color: "#D90166", fontSize: "6rem" }}
+        />
+      ),
       day: "this month",
-      val:"2%",
-      bar: <HiArrowUp style={{color:"#FF0000"}}/>,
+      val: "2%",
+      bar: <HiArrowUp style={{ color: "#FF0000" }} />,
       money: "$2.4k",
       description: "Orders",
     },
@@ -39,10 +43,10 @@ const DashBoard = () => {
       color: "##0000D1",
       bg: "#0000d13d",
       textcol: "FF0000",
-      icon: <FaWallet style={{color:"#0000D1",fontSize:"6rem"}}/>,
+      icon: <FaWallet style={{ color: "#0000D1", fontSize: "6rem" }} />,
       day: "this month",
-      val:"2%",
-      bar: <HiArrowDown style={{color:"red"}}/>,
+      val: "2%",
+      bar: <HiArrowDown style={{ color: "red" }} />,
       money: "$2.4k",
       description: "Balance",
     },
@@ -50,13 +54,15 @@ const DashBoard = () => {
       color: "#FF0000",
       bg: "#ff00003d",
       textcol: "#00E400",
-      icon: <HiOutlineShoppingBag style={{color:"#FF0000",fontSize:"6rem"}}/>,
+      icon: (
+        <HiOutlineShoppingBag style={{ color: "#FF0000", fontSize: "6rem" }} />
+      ),
       day: "this week",
-      val:"11%",
-      bar: <HiArrowUp style={{color:"#00E400"}}/>,
+      val: "11%",
+      bar: <HiArrowUp style={{ color: "#00E400" }} />,
       money: "$89k",
       description: "Total Sales",
-    }
+    },
   ];
 
   return (
@@ -72,21 +78,28 @@ const DashBoard = () => {
         {card.map((val, i) => {
           return (
             <div className="card-main" key={i}>
-              <div className="cir" style={{backgroundColor:val.bg}}>{val.icon}</div>
+              <div className="cir" style={{ backgroundColor: val.bg }}>
+                {val.icon}
+              </div>
               <div className="info">
                 <p>{val.description}</p>
                 <p>{val.money}</p>
-                <p><span style={{color:val.textcol}}>{val.bar} {val.val} </span>{val.day}</p>
+                <p>
+                  <span style={{ color: val.textcol }}>
+                    {val.bar} {val.val}{" "}
+                  </span>
+                  {val.day}
+                </p>
               </div>
             </div>
           );
         })}
       </div>
       <div className="graph">
-        <BarChart/>
-        <CircleChart/>
+        <BarChart />
+        <CircleChart />
       </div>
-        <ProductSell/>
+      <ProductSell />
     </Wrapper>
   );
 };
@@ -100,6 +113,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   flex-wrap: wrap;
+  padding: 3rem 4rem;
 
   .top {
     display: flex;
@@ -142,7 +156,6 @@ const Wrapper = styled.div`
     align-items: center;
     margin-bottom: 3rem;
 
-
     .card-main {
       width: 26rem;
       height: 14rem;
@@ -152,28 +165,24 @@ const Wrapper = styled.div`
       justify-content: space-around;
       align-items: center;
 
-      .info{
-        p{
-
-          &:nth-child(1){
-            color:#b7b2b2;
+      .info {
+        p {
+          &:nth-child(1) {
+            color: #b7b2b2;
             font-size: 1.2rem;
-
           }
-          &:nth-child(2){
+          &:nth-child(2) {
             font-weight: bold;
             font-size: 2rem;
-            
           }
-          &:nth-child(3){
+          &:nth-child(3) {
             font-size: 1.2rem;
             color: black;
           }
-
         }
       }
 
-      .cir{
+      .cir {
         width: 10rem;
         height: 10rem;
         border-radius: 50%;
@@ -184,11 +193,10 @@ const Wrapper = styled.div`
     }
   }
 
-  .graph{
+  .graph {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 3rem;
-
   }
 `;

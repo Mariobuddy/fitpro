@@ -14,7 +14,8 @@ import rohit from "../../Assets/main.jpg";
 
 const Home = () => {
   const [currentSelect, setCurrentSelect] = useState("block");
-  const handNav = (e) => {
+
+  const handnav = (e) => {
     console.log(e.target.id);
   };
   return (
@@ -25,45 +26,40 @@ const Home = () => {
             <TbSettings2 className="setting" />
             Dashboard
           </p>
-          <NavLink
-            className={"navOne"}
-            to={"dashboard"}
-            id="Hello"
-            onClick={handNav}
-          >
-            <div className="in">
+          <NavLink className={"navOne"} to={"dashboard"}>
+            <div className="in" onClick={handnav} id={"home"}>
               <TbSquareKey className="icon" />
               Dashboard
             </div>
             <MdKeyboardArrowRight className="arrow" />
           </NavLink>
           <NavLink className={"navOne"} to={"product"}>
-            <div className="in">
+            <div className="in" onClick={handnav} id={"product"}>
               <FiBox className="icon" />
               Product
             </div>{" "}
             <MdKeyboardArrowRight className="arrow" />
           </NavLink>
           <NavLink className={"navOne"} to={"customer"}>
-            <div className="in">
+            <div className="in" onClick={handnav} id={"customer"}>
               <TbUserSquareRounded className="icon" /> Customers{" "}
             </div>
             <MdKeyboardArrowRight className="arrow" />
           </NavLink>
           <NavLink className={"navOne"} to={"income"}>
-            <div className="in">
+            <div className="in" onClick={handnav} id={"income"}>
               <FaWallet className="icon" /> Income{" "}
             </div>
             <MdKeyboardArrowRight className="arrow" />
           </NavLink>
           <NavLink className={"navOne"} to={"promote"}>
-            <div className="in">
+            <div className="in" onClick={handnav} id={"promote"}>
               <CiDiscount1 className="icon" /> Promote{" "}
             </div>
             <MdKeyboardArrowRight className="arrow" />
           </NavLink>
           <NavLink className={"navOne"} to={"help"}>
-            <div className="in">
+            <div className="in" onClick={handnav} id={"help"}>
               <TbHelpOctagon className="icon" /> Help{" "}
             </div>
             <MdKeyboardArrowRight className="arrow" />
@@ -91,8 +87,6 @@ export default Home;
 
 const Wrapper = styled.div`
   display: flex;
-  background-color:  #f5f5dc;
-
 
   .active {
     background: rgba(255, 255, 255, 0.2);
@@ -110,10 +104,10 @@ const Wrapper = styled.div`
   .right {
     width: 84vw;
     height: 100%;
-    padding: 3rem 4rem;
     display: flex;
     flex-direction: column;
     margin-left: 16vw;
+    background-color: #f5f5dc;
   }
 
   .left {
