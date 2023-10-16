@@ -46,7 +46,9 @@ const Home = () => {
     <Wrapper>
       <div
         className="left"
-        style={{ display: show || (window.innerWidth>768 && !size)? "flex" : "none" }}
+        style={{
+          display: show || (window.innerWidth > 768 && !size) ? "flex" : "none",
+        }}
       >
         <div className="link">
           <p>
