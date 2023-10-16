@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 import { MdKeyboardArrowRight } from "react-icons/md";
@@ -17,7 +17,23 @@ import { AiOutlineClose } from "react-icons/ai";
 const Home = () => {
   const location = useLocation();
   const [currentSelect, setCurrentSelect] = useState(location.pathname);
+  const [size, setSize] = useState(false);
   const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    let resizeRes = () => {
+      if (window.innerWidth <= 768) {
+        setSize(true);
+      } else {
+        setSize(false);
+      }
+    };
+    window.addEventListener("resize", resizeRes);
+    return () => {
+      window.removeEventListener("resize", resizeRes);
+    };
+  }, []);
+
   let Toggle = () => {
     setShow(!show);
   };
@@ -30,7 +46,7 @@ const Home = () => {
     <Wrapper>
       <div
         className="left"
-        style={{ display: show || window.innerWidth > 768 ? "flex" : "none" }}
+        style={{ display: show || !size ? "flex" : "none" }}
       >
         <div className="link">
           <p>
