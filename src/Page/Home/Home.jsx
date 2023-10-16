@@ -24,6 +24,7 @@ const Home = () => {
 
   const handnav = (val) => {
     setCurrentSelect(val);
+    setShow(false);
   };
   return (
     <Wrapper>
