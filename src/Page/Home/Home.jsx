@@ -11,17 +11,26 @@ import { FiBox } from "react-icons/fi";
 import { TbHelpOctagon } from "react-icons/tb";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import rohit from "../../Assets/main.jpg";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { AiOutlineClose } from "react-icons/ai";
 
 const Home = () => {
   const location = useLocation();
   const [currentSelect, setCurrentSelect] = useState(location.pathname);
+  const [show, setShow] = useState(false);
+  let Toggle = () => {
+    setShow(!show);
+  };
 
   const handnav = (val) => {
     setCurrentSelect(val);
   };
   return (
     <Wrapper>
-      <div className="left">
+      <div
+        className="left"
+        style={{ display: show || window.innerWidth > 768 ? "flex" : "none" }}
+      >
         <div className="link">
           <p>
             <TbSettings2 className="setting" />
@@ -129,6 +138,13 @@ const Home = () => {
           <MdKeyboardArrowDown className="down-arrow" />
         </div>
       </div>
+      <div className="mobile">
+        {show ? (
+          <AiOutlineClose className="logo1" onClick={Toggle} />
+        ) : (
+          <GiHamburgerMenu className="logo1" onClick={Toggle} />
+        )}
+      </div>
       <div className="right">
         <Outlet />
       </div>
@@ -140,6 +156,11 @@ export default Home;
 
 const Wrapper = styled.div`
   display: flex;
+  background-color: #f5f5dc;
+
+  .mobile {
+    display: none;
+  }
 
   .active {
     background: rgba(255, 255, 255, 0.2);
@@ -160,7 +181,6 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     margin-left: 16vw;
-    background-color: #f5f5dc;
   }
 
   .left {
@@ -259,6 +279,46 @@ const Wrapper = styled.div`
           height: 3.2rem;
           border-radius: 50%;
         }
+      }
+    }
+  }
+
+  @media (min-width: 360px) and (max-width: 768px) {
+    .mobile {
+      display: inline-flex;
+      height: 100%;
+      justify-content: space-between;
+      align-items: center;
+      margin-left: 0rem;
+      position: fixed;
+      top: -36rem;
+      z-index: 99999999;
+      right: 1rem;
+
+      .logo1 {
+        cursor: pointer;
+        font-size: 3rem;
+        color: orangered;
+      }
+    }
+    .right {
+      width: 100vw;
+      height: 100%;
+      flex-direction: column;
+      margin-left: 0vw;
+    }
+
+    .left {
+      background-color: #03002e;
+      padding: 2rem;
+      width: 100%;
+      height: fit-content;
+      display: none;
+
+      .profile {
+        margin-left: 0rem;
+        width: 100%;
+        margin-top: 10rem;
       }
     }
   }

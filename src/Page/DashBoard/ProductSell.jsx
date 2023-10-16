@@ -79,11 +79,11 @@ const Wrapper = styled.div`
   position: relative;
 
   &::after {
-    content: ""; /* The pseudo-element must have content */
-    display: block; /* Make the pseudo-element a block-level element */
-    height: 1px; /* Set the height to create the line thickness */
-    width: 100%; /* Set the width to make it span the entire width of the parent element */
-    background-color: #b7b2b2; /* Set the line color */
+    content: "";
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: #b7b2b2;
     margin-top: 10px;
     position: absolute;
     top: 9.2rem;
@@ -142,12 +142,8 @@ const Wrapper = styled.div`
           display: flex;
           justify-content: center;
           align-items: center;
-          &:nth-child(1) {
-          }
           &:nth-child(2) {
             font-weight: bold;
-          }
-          &:nth-child(3) {
           }
         }
       }
@@ -231,12 +227,93 @@ const Wrapper = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        &:nth-child(1) {
+      }
+    }
+  }
+
+  @media (min-width: 360px) and (max-width: 768px) {
+    padding: 1rem 1rem;
+
+    &::after {
+      top: 12rem;
+      left: 0;
+    }
+
+    .pro-main {
+      margin-top: 3rem;
+      display: flex;
+      flex-direction: column;
+
+      .main-OneDiv {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        .this-left {
+          display: flex;
+          width: fit-content;
+
+          img {
+            width: 8rem;
+            height: 3rem;
+          }
+
+          .left-detail {
+            margin-left: 1rem;
+            flex-direction: column;
+            p {
+              &:nth-child(1) {
+                font-size: 1.2rem;
+              }
+              &:nth-child(2) {
+                font-size: 1rem;
+              }
+            }
+          }
         }
-        &:nth-child(2) {
+
+        .this-right {
+          width: 15rem;
+
+          p {
+            font-size: 1rem;
+            white-space: nowrap;
+          }
         }
-        &:nth-child(3) {
+      }
+    }
+
+    .pro-top {
+      justify-content: center;
+      flex-wrap: wrap;
+
+      p {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+      }
+
+      .mix-pro {
+        select {
+          width: 12rem;
+          height: 3rem;
+          font-size: 1rem;
         }
+      }
+      .search-div {
+        margin-right: 4rem;
+        input {
+          width: 12rem;
+        }
+      }
+    }
+
+    .pro-name {
+      p {
+        font-size: 1rem;
+      }
+
+      .inner-name {
+        width: 15rem;
       }
     }
   }

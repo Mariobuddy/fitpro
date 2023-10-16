@@ -1,26 +1,26 @@
 import React from "react";
 import styled from "styled-components";
 import { Doughnut } from "react-chartjs-2";
-import {Chart, ArcElement} from 'chart.js'
+import { Chart, ArcElement } from "chart.js";
 Chart.register(ArcElement);
 
 const CircleChart = () => {
   const data = {
-    labels: ['Red', 'Blue', 'Yellow'],
+    labels: ["Red", "Blue", "Yellow"],
     datasets: [
       {
         data: [180, 370, 300],
-        backgroundColor: ['#fe019a','#B026FF ', '#e4ddddba'],
-        borderWidth:[0,12,18],
+        backgroundColor: ["#fe019a", "#B026FF ", "#e4ddddba"],
+        borderWidth: [0, 12, 18],
         radius: 100,
-        hoverOffset: 20, 
+        hoverOffset: 20,
       },
     ],
   };
 
-  let options={
-    cutout:60
-  }
+  let options = {
+    cutout: 60,
+  };
   return (
     <Wrapper>
       <div className="cir-top">
@@ -28,7 +28,7 @@ const CircleChart = () => {
         <p>Customers that buy products</p>
       </div>
       <div className="cir-bottom">
-        <Doughnut data={data} options={options}/>
+        <Doughnut data={data} options={options} />
         <div className="mid">
           <p>65%</p>
           <p>Total New</p>
@@ -92,6 +92,24 @@ const Wrapper = styled.div`
         }
         &:nth-child(3) {
           font-size: 1.2rem;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 360px) and (max-width: 768px) {
+    width: 100%;
+    height: 40vh;
+    padding: 1rem 1rem;
+    margin-bottom: 3rem;
+    .cir-top {
+      p {
+        &:nth-child(1) {
+          font-size: 1.6rem;
+        }
+
+        &:nth-child(2) {
+          font-size: 1rem;
         }
       }
     }

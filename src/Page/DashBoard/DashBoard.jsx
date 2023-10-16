@@ -20,7 +20,7 @@ const DashBoard = () => {
       icon: <AiOutlineDollar style={{ color: "#00E400", fontSize: "6rem" }} />,
       day: "this month",
       val: "37.8%",
-      bar: <HiArrowUp style={{ color: "#00E400" ,paddingTop:"0.2rem"}} />,
+      bar: <HiArrowUp style={{ color: "#00E400", paddingTop: "0.2rem" }} />,
       money: "$198k",
       description: "Earning",
     },
@@ -35,7 +35,7 @@ const DashBoard = () => {
       ),
       day: "this month",
       val: "2%",
-      bar: <HiArrowUp style={{ color: "#FF0000" ,paddingTop:"0.2rem"}} />,
+      bar: <HiArrowUp style={{ color: "#FF0000", paddingTop: "0.2rem" }} />,
       money: "$2.4k",
       description: "Orders",
     },
@@ -46,7 +46,7 @@ const DashBoard = () => {
       icon: <FaWallet style={{ color: "#0000D1", fontSize: "6rem" }} />,
       day: "this month",
       val: "2%",
-      bar: <HiArrowDown style={{ color: "#FF0000",paddingTop:"0.2rem"}} />,
+      bar: <HiArrowDown style={{ color: "#FF0000", paddingTop: "0.2rem" }} />,
       money: "$2.4k",
       description: "Balance",
     },
@@ -59,7 +59,7 @@ const DashBoard = () => {
       ),
       day: "this week",
       val: "11%",
-      bar: <HiArrowUp style={{ color: "#00E400",paddingTop:"0.2rem" }} />,
+      bar: <HiArrowUp style={{ color: "#00E400", paddingTop: "0.2rem" }} />,
       money: "$89k",
       description: "Total Sales",
     },
@@ -155,6 +155,7 @@ const Wrapper = styled.div`
     justify-content: space-between;
     align-items: center;
     margin-bottom: 3rem;
+    flex-wrap: wrap;
 
     .card-main {
       width: 26rem;
@@ -198,5 +199,40 @@ const Wrapper = styled.div`
     justify-content: space-between;
     align-items: center;
     margin-bottom: 3rem;
+  }
+
+  @media (min-width: 360px) and (max-width: 768px) {
+    justify-content: center;
+    padding: 5rem 2rem 3rem 2rem;
+
+    .top {
+      margin-bottom: 4rem;
+      .search-div {
+        input {
+          width: 15rem;
+
+          &::placeholder {
+            color: #b7b2b2;
+          }
+        }
+      }
+    }
+
+    .card {
+      justify-content: center;
+      margin-bottom: 3rem;
+
+      .card-main {
+        margin-bottom: 3rem;
+      }
+    }
+
+    .graph {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 3rem;
+      flex-direction: column;
+    }
   }
 `;

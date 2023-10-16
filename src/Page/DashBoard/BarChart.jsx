@@ -31,7 +31,10 @@ const BarChart = () => {
         {data.map((val, i) => {
           return (
             <div className="inner-chart" key={i}>
-              <div className="bar-in" style={{ height: val.height,backgroundColor:val.color }}></div>
+              <div
+                className="bar-in"
+                style={{ height: val.height, backgroundColor: val.color }}
+              ></div>
               <p>{val.des}</p>
             </div>
           );
@@ -103,6 +106,45 @@ const Wrapper = styled.div`
       p {
         margin-top: 1.5rem;
         font-size: 1.2rem;
+      }
+    }
+  }
+
+  @media (min-width: 360px) and (max-width: 768px) {
+    width: 100%;
+    padding: 0rem 0rem;
+    height: 40vh;
+    margin-bottom: 3rem;
+    .c-top {
+      padding: 0rem 1rem;
+
+      .c-left {
+        p {
+          &:nth-child(1) {
+            font-size: 1.6rem;
+          }
+          &:nth-child(2) {
+            font-size: 1rem;
+          }
+        }
+      }
+      select {
+        width: 10rem;
+        height: 3rem;
+        font-size: 1rem;
+      }
+    }
+
+    .chart {
+      .inner-chart {
+        .bar-in {
+          border-radius: 0.5rem;
+          width: 2rem;
+        }
+        p {
+          margin-top: 1rem;
+          font-size: 1rem;
+        }
       }
     }
   }
