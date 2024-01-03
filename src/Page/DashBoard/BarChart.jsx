@@ -16,6 +16,7 @@ const BarChart = () => {
     { height: "14rem", color: "#e4ddddba", des: "Nov" },
     { height: "16rem", color: "#e4ddddba", des: "Dec" },
   ];
+  console.log("hello")
   return (
     <Wrapper>
       <div className="c-top">
